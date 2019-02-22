@@ -19,8 +19,8 @@ with open(csvpath, newline= '') as csvfile:
         counties.append(i[1])
         voter_ID.append(i[0])
     row_count = len(voter_ID)
-    candidate_list= (set(candidates))
-   
+    print(voter_ID[0])
+    print(row_count)
     
     # A complete list of candidates who received votes
     
@@ -35,13 +35,13 @@ with open(csvpath, newline= '') as csvfile:
     # Election Results
     # *** 
     #print ('Total number of votes cast:')
-    
-    #print(f'The total amount of votes cast this election was {row_count} votes!')
+    #print (row_count)
+   # print(f'The total amount of votes cast this election was {row_count} votes!')
     # ***
     # Corey, Khan, Li, O'Tuley canidates, list them in order of percentages of votes received
     # ***
     #print('Our candidates!:')
-   # print(list(candidate_list))
+    #print(set(candidates))
     # the winner: name
     # ***
     # some cool asci picture maybe? Related to voting
