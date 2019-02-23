@@ -19,7 +19,7 @@ with open(csvpath, newline= '') as csvfile:
     for i in csvreader:
         months.append(i[0])
         profit.append(int(i[1]))
-    #print(len(months))
+    
     #print(profit)
 #The net total amount of "Profit/Losses" over the entire period
 
@@ -34,17 +34,17 @@ def list_sum(input_list):
         total += i
     return(total)
 
-print(f'This is the total profit: ${(list_sum(profit))}')
+
 
 change=[]
 for i in range(len(profit)-1):
     this_change = profit[i+1]-profit[i]
     change.append(this_change)
     
-avg_change = list_sum(change)/len(change)
+avg_change = round(list_sum(change)/len(change),2)
 
 #reducing avg_change to two decimal points to represent money
-print(round(avg_change,2))
+
 
 #The greatest increase in profits (date and amount) over the entire period
 max_profit= max(change)
@@ -64,6 +64,8 @@ max_date = profit_date(max_profit)
 min_date = profit_date(min_profit)
   #list.index(element)
 #print(type(max_date))
-
+print(f'Total months in study: {len(months)} months')
+print(f'Average change was: ${(avg_change)}')
+print(f'This is the total profit: ${(list_sum(profit))}')
 print(f'Maximum profit: ${max_profit} and happened in {max_date}.')
 print(f'Minimum profit: ${min_profit} and happened in {min_date}.')
