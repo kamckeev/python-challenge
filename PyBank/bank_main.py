@@ -48,8 +48,22 @@ print(round(avg_change,2))
 
 #The greatest increase in profits (date and amount) over the entire period
 max_profit= max(change)
-print(f'Maximum profit: ${max_profit}')
+
 
 #The greatest decrease in losses (date and amount) over the entire period
 min_profit= min(change)
-print(f'Minimum profit: ${min_profit}')
+
+#want to find the index of the min&max profits, then use that index to return a date
+def profit_date(input_profit):
+    profit_index=change.index(input_profit)
+    month_index = profit_index+1
+    #date = (months.index(month_index))
+    date = months[month_index]
+    return(date)
+max_date = profit_date(max_profit)
+min_date = profit_date(min_profit)
+  #list.index(element)
+#print(type(max_date))
+
+print(f'Maximum profit: ${max_profit} and happened in {max_date}.')
+print(f'Minimum profit: ${min_profit} and happened in {min_date}.')
