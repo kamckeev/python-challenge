@@ -15,8 +15,17 @@ with open(csvpath, newline= '') as csvfile:
         else:
             candidate_raws[i[2]] = candidate_raws[i[2]]+1
     row_count = len(candidates)
+
 candidate_names =list(candidate_raws)
 candidate_votes= list(candidate_raws.values())
+
+candidate_fraction= []
+for i in candidate_votes:
+    candidate_fraction.append((round((i/row_count)*100)))
+
+
+candidate_percentage = dict(zip(candidate_names, candidate_fraction))
+
 winner_value= max(candidate_votes)
 
 winner_name = 'n/a'
@@ -31,10 +40,10 @@ print('{:*^50}'.format('Election Results'))
 print('{:^30}'.format(f'The total number of votes cast was {row_count} votes!'))
 print('{:^50}'.format('~'))
 # The percentage of votes each candidate won
-print(f'Candidate () had ()% of the vote, (x votes)')
-print(f'Candidate () had ()% of the vote, (x votes)')
-print(f'Candidate () had ()% of the vote, (x votes)')
-print(f'Candidate () had ()% of the vote, (x votes)')
+
+for name in candidate_names:
+    print(f'Candidate {name} had {candidate_percentage[name]}% of the vote, ({candidate_raws[name]})')
+
 print('{:^50}'.format('~'))
 #The winner of the election based on popular vote
 # the winner: name
