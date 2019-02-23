@@ -1,5 +1,6 @@
 import os
 import csv
+canidates_dict ={}
 csvpath = os.path.join('..', 'PyPoll', 'election_data2.csv')
 with open(csvpath, newline= '') as csvfile:
     csvreader=csv.reader(csvfile, delimiter=',')
@@ -13,7 +14,8 @@ with open(csvpath, newline= '') as csvfile:
         candidates.append(i[2])
         counties.append(i[1])
         voter_ID.append(i[0])
-    row_count = len(voter_ID)
+
+    row_count = len(candidates)
     
     # A complete list of candidates who received votes
     candidate_list= (set(candidates))
