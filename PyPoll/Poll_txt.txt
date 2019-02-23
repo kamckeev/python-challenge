@@ -1,0 +1,10 @@
+*****************Election Results*****************
+The total number of votes cast was 3521001 votes!
+                        ~                         
+Candidate Khan had 63% of the vote, (2218231)
+Candidate Correy had 20% of the vote, (704200)
+Candidate Li had 14% of the vote, (492940)
+Candidate O'Tooley had 3% of the vote, (105630)
+                        ~                         
+The winner was: Khan
+**************************************************

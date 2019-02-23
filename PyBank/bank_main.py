@@ -63,9 +63,26 @@ def profit_date(input_profit):
 max_date = profit_date(max_profit)
 min_date = profit_date(min_profit)
   #list.index(element)
-#print(type(max_date))
+
+#print to textfile:
+#print to txt file
+output_path= os.path.join('..','PyBank', 'Bank_txt.txt')
+with open(output_path, "w") as textfile:
+    print('{:*^50}'.format(''), file=textfile)
+    print(f'Total months in study: {len(months)} months',file=textfile)
+    print(f'Average change was: ${(avg_change)}', file=textfile)
+    print('{:^50}'.format('~'), file=textfile)
+    print(f'This is the total profit: ${(list_sum(profit))}',file=textfile)
+    print(f'Maximum profit: ${max_profit} and happened in {max_date}.', file=textfile)
+    print(f'Minimum profit: ${min_profit} and happened in {min_date}.', file=textfile)
+    print('{:*^50}'.format(''),file=textfile)
+
+#print to terminal:
+print('{:*^50}'.format(''))
 print(f'Total months in study: {len(months)} months')
 print(f'Average change was: ${(avg_change)}')
+print('{:^50}'.format('~'))
 print(f'This is the total profit: ${(list_sum(profit))}')
 print(f'Maximum profit: ${max_profit} and happened in {max_date}.')
 print(f'Minimum profit: ${min_profit} and happened in {min_date}.')
+print('{:*^50}'.format(''))
